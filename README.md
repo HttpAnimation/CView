@@ -6,3 +6,8 @@ A webviewer made in c for other projects
 ```bash
 sudo dnf install glfw-devel
 ```
+
+2) mesa-libGL-devel
+```bash
+sudo dnf install mesa-libGL-devel
+```
