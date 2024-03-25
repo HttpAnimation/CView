@@ -12,6 +12,7 @@ build_folder="Builds/$current_datetime"
 mkdir -p "$build_folder"
 
 # Compile c scripts into the build folder
+gcc -o "$build_folder/openGLTest" openGLTest.c -lglfw -framework OpenGL
 
 # Copy files into the build folder
 cp * "$build_folder"
@@ -28,4 +29,4 @@ echo "This is an auto-generated message and might work or might not." >> "$readm
 # Print the path to the build folder
 echo "Builds created at: $build_folder"
 echo "You can also run it by typing this in:"
-echo "./$build_folder/"
+echo "./$build_folder/main"
