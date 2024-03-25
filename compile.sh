@@ -13,6 +13,7 @@ mkdir -p "$build_folder"
 
 # Compile c scripts into the build folder
 # gcc -o "$build_folder/openGLTest" openGLTest.c -lglfw -lGL -I/usr/include
+gcc -o $build_folder/sdl_example" sdl_example.c -lSDL2
 
 # Copy files into the build folder
 cp openGLTest.c "$build_folder"
