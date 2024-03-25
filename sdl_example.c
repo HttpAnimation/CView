@@ -19,6 +19,15 @@ int main() {
         return 1;
     }
 
+    // Create a renderer
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (!renderer) {
+        SDL_Log("Failed to create renderer: %s", SDL_GetError());
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return 1;
+    }
+
     // Main loop
     SDL_bool running = SDL_TRUE;
     while (running) {
@@ -29,12 +38,24 @@ int main() {
             }
         }
 
-        // Render here
-        // For simplicity, we'll just delay for a short period
+        // Clear the renderer
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer);
+
+        // Render a red rectangle
+        SDL_Rect rect = { 100, 100, 200, 150 };
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        SDL_RenderFillRect(renderer, &rect);
+
+        // Present the renderer
+        SDL_RenderPresent(renderer);
+
+        // Delay for a short period
         SDL_Delay(100);
     }
 
     // Clean up and exit
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;
