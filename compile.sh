@@ -14,7 +14,7 @@ mkdir -p "$build_folder"
 # Compile c scripts into the build folder
 # gcc -o "$build_folder/openGLTest" openGLTest.c -lglfw -lGL -I/usr/include
 gcc -o "$build_folder/sdl_example" sdl_example.c -lSDL2 -I/usr/x86_64-w64-mingw32/sys-root/mingw/include/SDL2
-gcc CView.c -o "$build_folder/CView" -I/usr/include/SDL2 -L/usr/lib -lSDL2 -lSDL2_image -lSDL2_ttf
+gcc CView.c -o "$build_folder/CView" -I/usr/include/SDL2 -L/usr/lib64 -lSDL2 -lSDL2_image -lSDL2_ttf
 
 # Copy files into the build folder
 cp openGLTest.c "$build_folder"
